@@ -5,7 +5,6 @@
 package card;
 
 import java.util.Random;
-import java.util.Scanner;
 
 /**
  * A class that fills a magic hand of 7 cards with random Card Objects
@@ -21,7 +20,6 @@ public class CardTrick {
     {
         Card[] magicHand = new Card[7];
         Random randomGen = new Random();
-        Scanner input = new Scanner(System.in);
         
         for (int i=0; i<magicHand.length; i++)
         {
@@ -31,22 +29,21 @@ public class CardTrick {
             magicHand[i] = c;
         }
         
-        System.out.println("Enter card value from 1 to 13");
-        int value = input.nextInt();
-        System.out.println("Enter a suit");
-        String suit = input.next();
-        Card playerCard = new Card();
-        playerCard.setValue(value);
-        playerCard.setSuit(suit);
+        Card luckyCard = new Card();
+        luckyCard.setValue(6);
+        luckyCard.setSuit("Spade");
         
-        for (Card c : magicHand){
-            if (c.getValue() == playerCard.getValue() && c.getSuit().equals(playerCard.getSuit())){
-                System.out.println("Congartulation, Your card is found in the magic ");
+        for (Card c: magicHand) {
+            if (c.getValue() == luckyCard.getvalue() && c.getSuit().equals(luckyCard.getsuit())) {
+                System.out.println("Congratulations, Your lucky card is found in the magic hand!");
                 return;
             }
         }
         
-       System.out.println("Sorry! Your card is not in it");
+        System.out.println("Sorry! Your lucky card is not in the magic hand.");
+    }
+}
+
     }
     
 }
