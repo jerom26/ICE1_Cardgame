@@ -43,7 +43,3 @@ public class CardTrick {
         System.out.println("Sorry! Your lucky card is not in the magic hand.");
     }
 }
-
-    }
-    
-}
